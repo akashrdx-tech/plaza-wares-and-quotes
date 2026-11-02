@@ -3,6 +3,7 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 
 import { ItemCard } from "@/components/ItemCard";
+import { ProductShowcase } from "@/components/ProductShowcase";
 import { getPublicCatalogue } from "@/lib/stock.functions";
 import { SHOP_WHATSAPP, SHOP_WHATSAPP_DIGITS, formatPKR, waLink } from "@/lib/stock-types";
 
@@ -106,6 +107,8 @@ function PublicRateList() {
           </Link>
         </div>
       </section>
+
+      <ProductShowcase items={data.items} />
 
       <section className="surface-panel mt-6 grid gap-3 p-4 sm:grid-cols-[2fr_1fr_1fr]">
         <label className="block">
