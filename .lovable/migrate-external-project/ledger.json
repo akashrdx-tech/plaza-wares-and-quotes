@@ -1,0 +1,70 @@
+{
+  "source": "github",
+  "source_url": "https://github.com/rdxbotv9-hub/plaza-stock-and-estimates.git",
+  "stack": "TanStack Start (same Lovable template), no database, static stock JSON",
+  "capabilities": [
+    {
+      "capability": "code",
+      "source": "github repo",
+      "outcome": "migrate",
+      "status": "verified",
+      "next_action": ""
+    },
+    {
+      "capability": "schema",
+      "source": "none",
+      "outcome": "none",
+      "status": "verified",
+      "next_action": ""
+    },
+    {
+      "capability": "records",
+      "source": "list/ALL_STOCK.json + src/lib/graceware-products.json bundled in repo",
+      "outcome": "migrate",
+      "status": "done",
+      "next_action": ""
+    },
+    {
+      "capability": "uploaded file bytes",
+      "source": "public/images/graceware photos in repo",
+      "outcome": "migrate",
+      "status": "done",
+      "next_action": ""
+    },
+    {
+      "capability": "auth",
+      "source": "single admin login via ADMIN_USERNAME / ADMIN_PASSWORD secrets",
+      "outcome": "migrate",
+      "status": "pending",
+      "next_action": "user skipped the secure form; admin username and password still needed"
+    },
+    {
+      "capability": "secrets",
+      "source": "SESSION_SECRET",
+      "outcome": "migrate",
+      "status": "done",
+      "next_action": "generated"
+    },
+    {
+      "capability": "external providers",
+      "source": "Graceware / West Point links, WhatsApp buttons",
+      "outcome": "preserve",
+      "status": "done",
+      "next_action": ""
+    },
+    {
+      "capability": "cutover",
+      "source": "vercel.json kept for optional Vercel hosting",
+      "outcome": "preserve",
+      "status": "done",
+      "next_action": ""
+    },
+    {
+      "capability": "verification",
+      "source": "",
+      "outcome": "migrate",
+      "status": "partial",
+      "next_action": "all 5 pages load; admin sign-in untested until admin username/password are added"
+    }
+  ]
+}
