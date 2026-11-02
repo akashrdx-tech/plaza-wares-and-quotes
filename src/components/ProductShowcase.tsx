@@ -30,6 +30,7 @@ function pickWestPoint(items: PublicItem[]): PublicItem[] {
   let cursor = 0;
   while (picks.length < WP_CARD_COUNT && categories.length > 0) {
     const list = categories[cursor % categories.length];
+    if (!list) break;
     const next = list.shift();
     if (next) picks.push(next);
     if (list.length === 0) categories.splice(cursor % categories.length, 1);
@@ -52,6 +53,7 @@ function pickGraceware(): GracewareProduct[] {
   let cursor = 0;
   while (picks.length < GRACE_CARD_COUNT && categories.length > 0) {
     const list = categories[cursor % categories.length];
+    if (!list) break;
     const next = list.shift();
     if (next && !picks.some((pick) => pick.id === next.id)) picks.push(next);
     if (list.length === 0) categories.splice(cursor % categories.length, 1);
