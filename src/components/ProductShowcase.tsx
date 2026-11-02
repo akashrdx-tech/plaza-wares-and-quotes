@@ -7,13 +7,6 @@ import { formatPKR, type PublicItem } from "@/lib/stock-types";
 const WP_CARD_COUNT = 14;
 const GRACE_CARD_COUNT = 14;
 
-/** Spread picks across categories so the shelf reads like a full store window. */
-function spreadPick<T>(values: T[], count: number): T[] {
-  if (values.length <= count) return values;
-  const step = values.length / count;
-  return Array.from({ length: count }, (_, index) => values[Math.floor(index * step)]);
-}
-
 function pickWestPoint(items: PublicItem[]): PublicItem[] {
   const byCategory = new Map<string, PublicItem[]>();
   for (const item of items) {
